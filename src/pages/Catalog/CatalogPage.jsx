@@ -1,44 +1,33 @@
 import { CartItem } from 'CarItem/CarItem';
 import { Container, ItemCar } from './CatalogPage.styled';
+import { Button } from '@mui/material';
 
-export const CatalogPage1 = ({ cars }) => {
+export const CatalogPage = ({ cars, onClick }) => {
   return (
-    <Container>
-      {cars.map(car => (
-        <ItemCar key={car.id}>
-          {/* <Img src={car.img} alt="car" />
-          <BtnIcon>
-            <Icon />
-          </BtnIcon> */}
-          <ul>
-            <li>{car.make}</li>
-            <li>{car.model}</li>
-            <li>{car.year}</li>
-            <li>{car.rentalPrice}</li>
-          </ul>
-          <ul>
-            <li>{car.address}</li>
-            <li>{car.rentalCompany}</li>
-            <li>{car.type}</li>
-            <li>{car.model}</li>
-            <li>{car.id}</li>
-            <li>{car.accessories[1]}</li>
-          </ul>
-          <button>Learn more</button>
-        </ItemCar>
-      ))}
-    </Container>
-  );
-};
-
-export const CatalogPage = ({ cars }) => {
-  return (
-    <Container>
-      {cars.map(car => (
-        <ItemCar key={car.id}>
-          <CartItem car={car} />
-        </ItemCar>
-      ))}
-    </Container>
+    <>
+      <Container>
+        {cars.map(car => (
+          <ItemCar key={car.id}>
+            <CartItem car={car} />
+          </ItemCar>
+        ))}
+      </Container>
+      <Button
+        onClick={onClick}
+        variant="text"
+        sx={{
+          color: '#3470FF',
+          fontFamily: 'Manrope',
+          fontSize: '16px',
+          fontStyle: 'normal',
+          fontWeight: '500',
+          lineHeight: '24px',
+          textDecorationLine: 'underline',
+          textTransform: 'none',
+        }}
+      >
+        Load more
+      </Button>
+    </>
   );
 };

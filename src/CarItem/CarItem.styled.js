@@ -16,8 +16,34 @@ export const P = styled.p`
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 14px;
 `;
 
 export const Span = styled.span`
   color: #3470ff;
+`;
+
+export const ListInfo = styled.ul`
+  color: rgba(18, 20, 23, 0.5);
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  overflow: hidden; /* Скрываем содержимое, которое не помещается в контейнер */
+  text-overflow: ellipsis; /
+`;
+
+export const ItemInfo = styled.li`
+  padding-right: 6px;
+  margin-right: 6px;
+  border-right: 1px solid #ccc;
+  &:last-child {
+    border-right: none;
+  }
 `;
