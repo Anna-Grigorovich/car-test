@@ -54,9 +54,6 @@ export const App = () => {
     const filtered = cars.filter(car => favorites.includes(car.id));
     setFilteredCars(filtered);
   }, [favorites, cars]); // Обновление filteredCars при изменении favorites и cars
-  console.log(`filter ${filteredCars}`);
-  console.log(`favorites ${favorites}`);
-
   return (
     <>
       <Routes>

@@ -1,6 +1,5 @@
 import { Button } from '@mui/material';
 import {
-  Box,
   Div,
   Img,
   ImgWrap,
@@ -11,14 +10,14 @@ import {
 } from './CarItem.styled';
 import { ButtonFavorite } from 'ButtonFavotite/ButtonFavorite';
 
-export const CartItem = ({ car, addFavorite, isLike }) => {
+export const CartItem = ({ car, addFavorite, isLike, onClickLearnMore }) => {
   const address = car.address;
   const parts = address.split(', ');
   const city = parts[1];
   const country = parts[2];
 
   return (
-    <Box>
+    <>
       <ImgWrap>
         <ButtonFavorite id={car.id} addFavorite={addFavorite} isLike={isLike} />
         <Img src={car.img} alt="car" />
@@ -41,6 +40,7 @@ export const CartItem = ({ car, addFavorite, isLike }) => {
       </ListInfo>
       <Button
         variant="contained"
+        onClick={() => onClickLearnMore(car)}
         sx={{
           display: 'flex',
           width: '274px',
@@ -62,6 +62,6 @@ export const CartItem = ({ car, addFavorite, isLike }) => {
         {' '}
         Learn more
       </Button>
-    </Box>
+    </>
   );
 };

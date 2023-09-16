@@ -1,7 +1,7 @@
 const { default: styled } = require('styled-components');
-export const Box = styled.div`
-  width: 274px;
-`;
+// export const Box = styled.div`
+//   width: 274px;
+// `;
 export const Img = styled.img`
   height: 268px;
   width: 274px;
@@ -27,22 +27,30 @@ export const Span = styled.span`
   color: #3470ff;
 `;
 
-export const ListInfo = styled.ul`
+export const ListInfo = styled.div`
+  // color: rgba(18, 20, 23, 0.5);
+  // font-family: Manrope;
+  // font-size: 12px;
+  // font-style: normal;
+  // font-weight: 400;
+  // line-height: 18px;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // white-space: nowrap;
+  // overflow: hidden; /* Скрываем содержимое, которое не помещается в контейнер */
+  // text-overflow: ellipsis; /
+
+  width: 274px;
+`;
+
+export const ItemInfo = styled.span`
   color: rgba(18, 20, 23, 0.5);
   font-family: Manrope;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  white-space: nowrap;
-  overflow: hidden; /* Скрываем содержимое, которое не помещается в контейнер */
-  text-overflow: ellipsis; /
-`;
-
-export const ItemInfo = styled.li`
   padding-right: 6px;
   margin-right: 6px;
   border-right: 1px solid #ccc;
