@@ -1,19 +1,19 @@
+import { Button } from 'ButtonFavotite/ButtonFavorite.styled';
 import { CartItem } from 'CarItem/CarItem';
-import { Container, ContainerMain, ItemCar } from './CatalogPage.styled';
-import { Button } from '@mui/material';
+import { Container, ItemCar } from 'pages/Catalog/CatalogPage.styled';
 
-export const CatalogPage = ({ cars, onClick, addFavorite }) => {
+export const FavoritePage = ({ filteredCars, addFavorite }) => {
   return (
-    <ContainerMain>
+    <>
       <Container>
-        {cars.map(car => (
+        {filteredCars.map(car => (
           <ItemCar key={car.id}>
             <CartItem car={car} addFavorite={addFavorite} />
           </ItemCar>
         ))}
       </Container>
       <Button
-        onClick={onClick}
+        // onClick={onClick}
         variant="text"
         sx={{
           color: '#3470FF',
@@ -28,6 +28,6 @@ export const CatalogPage = ({ cars, onClick, addFavorite }) => {
       >
         Load more
       </Button>
-    </ContainerMain>
+    </>
   );
 };

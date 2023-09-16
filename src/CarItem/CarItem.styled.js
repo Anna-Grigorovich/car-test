@@ -7,6 +7,9 @@ export const Img = styled.img`
   width: 274px;
   border-radius: 14px;
 `;
+export const ImgWrap = styled.div`
+  position: relative;
+`;
 export const Div = styled.div`
   display: flex;
   justify-content: space-between;

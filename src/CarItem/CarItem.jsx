@@ -1,7 +1,17 @@
 import { Button } from '@mui/material';
-import { Box, Div, Img, ItemInfo, ListInfo, P, Span } from './CarItem.styled';
+import {
+  Box,
+  Div,
+  Img,
+  ImgWrap,
+  ItemInfo,
+  ListInfo,
+  P,
+  Span,
+} from './CarItem.styled';
+import { ButtonFavorite } from 'ButtonFavotite/ButtonFavorite';
 
-export const CartItem = ({ car }) => {
+export const CartItem = ({ car, addFavorite, isLike }) => {
   const address = car.address;
   const parts = address.split(', ');
   const city = parts[1];
@@ -9,7 +19,10 @@ export const CartItem = ({ car }) => {
 
   return (
     <Box>
-      <Img src={car.img} alt="car" />
+      <ImgWrap>
+        <ButtonFavorite id={car.id} addFavorite={addFavorite} isLike={isLike} />
+        <Img src={car.img} alt="car" />
+      </ImgWrap>
       <Div>
         <P>
           {car.make} <Span>{car.model}</Span>, {car.year}
