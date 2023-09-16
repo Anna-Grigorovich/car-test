@@ -23,8 +23,8 @@ export const ButtonClose = styled('button')({
   width: '24px',
   height: '24px',
 
-  display: 'flex',
-  justifyContent: 'center',
+  //   display: 'flex',
+  //   justifyContent: 'center',
   alignItems: 'center',
   color: ' #121417',
   backgroundColor: 'transparent',
@@ -39,16 +39,23 @@ export const ButtonClose = styled('button')({
 });
 
 export const CloseIcon = styled('svg')({
+  //   width: '30px',
+  //   height: '30px',
+  //   stroke: 'currentcolor',
   width: '24px',
   height: '24px',
   stroke: 'currentcolor',
+  display: 'block',
 });
 
 export const Img = styled.img`
   height: 248px;
-  width: 461;
+  //   width: 461px;
   border-radius: 14px;
   margin-bottom: 14px;
+  object-fit: cover;
+  //   background-size: auto;
+  //   object-position: center bottom;
 `;
 
 export const P = styled.p`
@@ -162,4 +169,13 @@ export const RentalItem = styled.li`
   //   &:not(:first-child) {
   //     display: inline;
   //   }
+`;
+export const RentalSpan = styled.span`
+  color: #3470ff;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.24px;
 `;

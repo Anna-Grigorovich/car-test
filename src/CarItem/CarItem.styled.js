@@ -9,6 +9,9 @@ export const Img = styled.img`
 `;
 export const ImgWrap = styled.div`
   position: relative;
+      display: flex;
+    justify-content: center;
+}
 `;
 export const Div = styled.div`
   display: flex;

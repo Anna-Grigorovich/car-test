@@ -12,6 +12,7 @@ import {
   P,
   Rental,
   RentalItem,
+  RentalSpan,
   Span,
 } from './Modal.styled';
 import sprite from '../../ButtonFavotite/sprite.svg';
@@ -33,7 +34,12 @@ export const ModalLearnMore = ({ open, onClose, car }) => {
       numbers.forEach(number => {
         text = text.replace(
           number,
-          `<span style="color: blue">${number}</span>`
+          `<span style="color: #3470ff; font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.24px;">${number}</span>`
         );
       });
     }
@@ -62,8 +68,8 @@ export const ModalLearnMore = ({ open, onClose, car }) => {
         <ButtonClose type="button" onClick={onClose}>
           <CloseIcon>
             <use
-              width={'24px'}
-              height={'24px'}
+              width={'18px'}
+              height={'18px'}
               href={sprite + '#icon-close'}
             ></use>
           </CloseIcon>
@@ -90,13 +96,20 @@ export const ModalLearnMore = ({ open, onClose, car }) => {
         </ListInfoAccessories>
         <Rental>Rental Conditions: </Rental>{' '}
         <ul>
-          {' '}
           {conditionsArray.map((condition, index) => (
             <RentalItem
               key={index}
               dangerouslySetInnerHTML={{ __html: highlightNumbers(condition) }}
             />
           ))}
+          <RentalItem>
+            Milis:
+            <RentalSpan>{car.mileage}</RentalSpan>
+          </RentalItem>
+          <RentalItem>
+            Price:
+            <RentalSpan>{car.rentalPrice}</RentalSpan>
+          </RentalItem>
         </ul>
       </ModalWrap>
     </Modal>

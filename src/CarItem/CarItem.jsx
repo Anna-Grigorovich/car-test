@@ -42,7 +42,6 @@ export const CartItem = ({ car, addFavorite, isLike, onClickLearnMore }) => {
         variant="contained"
         onClick={() => onClickLearnMore(car)}
         sx={{
-          display: 'flex',
           width: '274px',
           height: '44px',
           justifyContent: 'center',
@@ -55,8 +54,10 @@ export const CartItem = ({ car, addFavorite, isLike, onClickLearnMore }) => {
           fontStyle: 'normal',
           fontWeight: '600',
           lineHeight: '20px',
-          marginTop: '29px',
           textTransform: 'none',
+          display: 'block',
+          margin: ' 0 auto',
+          marginTop: '28px',
         }}
       >
         {' '}
