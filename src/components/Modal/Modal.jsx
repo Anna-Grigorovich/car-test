@@ -26,11 +26,8 @@ export const ModalLearnMore = ({ open, onClose, car }) => {
   const conditionsArray = rentalConditions.split('\n');
   // Функция для выделения чисел синим цветом
   const highlightNumbers = text => {
-    // Используем регулярное выражение для поиска чисел в строке
     const numbers = text.match(/\d+/g);
-
     if (numbers) {
-      // Если найдены числа, заменяем их в строке на синий цвет
       numbers.forEach(number => {
         text = text.replace(
           number,
@@ -56,8 +53,8 @@ export const ModalLearnMore = ({ open, onClose, car }) => {
       slotProps={{
         backdrop: {
           sx: {
-            width: '541px',
-            height: '752px',
+            // width: '541px',
+            // height: '752px',
             backgroundColor: 'rgba(18, 20, 23, 0.50)',
             backdropFilter: 'blur(6px)',
           },

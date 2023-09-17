@@ -10,16 +10,19 @@ import {
 } from './CarItem.styled';
 import { ButtonFavorite } from 'ButtonFavotite/ButtonFavorite';
 
-export const CartItem = ({ car, addFavorite, isLike, onClickLearnMore }) => {
+export const CartItem = ({ car, addFavorite, onClickLearnMore, favorites }) => {
   const address = car.address;
   const parts = address.split(', ');
   const city = parts[1];
   const country = parts[2];
-
   return (
     <>
       <ImgWrap>
-        <ButtonFavorite id={car.id} addFavorite={addFavorite} isLike={isLike} />
+        <ButtonFavorite
+          id={car.id}
+          addFavorite={addFavorite}
+          favorites={favorites}
+        />
         <Img src={car.img} alt="car" />
       </ImgWrap>
       <Div>

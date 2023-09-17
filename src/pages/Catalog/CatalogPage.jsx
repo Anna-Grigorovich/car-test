@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 import { useState } from 'react';
 import { ModalLearnMore } from 'components/Modal/Modal';
 
-export const CatalogPage = ({ cars, onClick, addFavorite }) => {
+export const CatalogPage = ({ cars, onClick, addFavorite, favorites }) => {
   const [isOpen, setIsOpen] = useState();
   const [dataOneCar, setdataOneCar] = useState({});
   const toggleModal = () => setIsOpen(!isOpen);
@@ -24,6 +24,7 @@ export const CatalogPage = ({ cars, onClick, addFavorite }) => {
               car={car}
               addFavorite={addFavorite}
               onClickLearnMore={onModal}
+              favorites={favorites}
             />
           </ItemCar>
         ))}

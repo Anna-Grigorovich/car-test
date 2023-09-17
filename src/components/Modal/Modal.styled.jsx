@@ -123,20 +123,6 @@ export const Accessories = styled.p`
   margin-bottom: 8px;
 `;
 export const ListInfoAccessories = styled.div`
-  // color: rgba(18, 20, 23, 0.5);
-  // font-family: Manrope;
-  // font-size: 12px;
-  // font-style: normal;
-  // font-weight: 400;
-  // line-height: 18px;
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
-  // white-space: nowrap;
-  // overflow: hidden; /* Скрываем содержимое, которое не помещается в контейнер */
-  // text-overflow: ellipsis; /
-
-  //   width: 277px;
   margin-bottom: 24px;
 `;
 export const Rental = styled.p`
@@ -178,4 +164,5 @@ export const RentalSpan = styled.span`
   font-weight: 600;
   line-height: 18px;
   letter-spacing: -0.24px;
+  //   margin-right: 8px;
 `;

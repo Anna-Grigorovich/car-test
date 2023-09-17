@@ -36,6 +36,10 @@ export const App = () => {
     setFavorites(updatedFavorites);
   };
   useEffect(() => {
+    const favoriteStringify = JSON.stringify(favorites);
+    localStorage.setItem('favorite', favoriteStringify);
+  }, [favorites]);
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchCars(page);
@@ -66,6 +70,7 @@ export const App = () => {
                 cars={cars}
                 onClick={handleClickLoad}
                 addFavorite={addFavorite}
+                favorites={favorites}
               />
             }
           />
@@ -75,6 +80,7 @@ export const App = () => {
               <FavoritePage
                 filteredCars={filteredCars}
                 addFavorite={addFavorite}
+                favorites={favorites}
               />
             }
           />
