@@ -63,7 +63,6 @@ export const CartItem = ({ car, addFavorite, onClickLearnMore, favorites }) => {
           marginTop: '28px',
         }}
       >
-        {' '}
         Learn more
       </Button>
     </>

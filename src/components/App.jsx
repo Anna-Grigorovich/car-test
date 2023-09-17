@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import { HomePage } from 'pages/HomePage/HomePage';
 import { useEffect, useState } from 'react';
@@ -9,7 +9,9 @@ import { FavoritePage } from 'pages/FavoritePage/FavoritePage';
 export const App = () => {
   const [cars, setCars] = useState([]);
   const [page, setPage] = useState(1);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(
+    JSON.parse(window.localStorage.getItem('favorite')) ?? []
+  );
   const [filteredCars, setFilteredCars] = useState([]);
 
   const handleClickLoad = () => {
@@ -84,12 +86,7 @@ export const App = () => {
               />
             }
           />
-          {/* <Route
-            path="/catalog"
-            element={<CatalogPage cars={cars} onClick={onModal} />}
-          />
-          <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="*" element={<Navigate to="/" />} /> */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
     </>

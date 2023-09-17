@@ -7,13 +7,15 @@ export const ModalWrap = styled('div')({
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '540px',
-  height: '540px',
+  // height: '540px',
   backgroundColor: '#ffffff',
   borderRadius: '24px',
   padding: '40px',
   display: 'flex',
   justifyContent: 'center',
   flexDirection: 'column',
+  maxHeight: '90vh',
+  overflowY: 'scroll',
 });
 
 export const ButtonClose = styled('button')({
@@ -54,6 +56,7 @@ export const Img = styled.img`
   border-radius: 14px;
   margin-bottom: 14px;
   object-fit: cover;
+  // margin-top: 40px;
   //   background-size: auto;
   //   object-position: center bottom;
 `;

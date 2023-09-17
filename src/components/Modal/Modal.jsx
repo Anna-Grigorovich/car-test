@@ -1,4 +1,4 @@
-import { Modal } from '@mui/material';
+import { Button, Modal } from '@mui/material';
 import {
   Accessories,
   ButtonClose,
@@ -24,6 +24,7 @@ export const ModalLearnMore = ({ open, onClose, car }) => {
   const country = parts[2];
   const rentalConditions = car.rentalConditions;
   const conditionsArray = rentalConditions.split('\n');
+
   // Функция для выделения чисел синим цветом
   const highlightNumbers = text => {
     const numbers = text.match(/\d+/g);
@@ -48,13 +49,13 @@ export const ModalLearnMore = ({ open, onClose, car }) => {
     <Modal
       open={open}
       onClose={onClose}
-      aria-labelledby="modal learn more"
-      aria-describedby="get more information about chosen car"
-      slotProps={{
+      sx={{
+        '& .MuiDialog-paper': {
+          width: '541px',
+          //   maxWidth: '100%',
+        },
         backdrop: {
           sx: {
-            // width: '541px',
-            // height: '752px',
             backgroundColor: 'rgba(18, 20, 23, 0.50)',
             backdropFilter: 'blur(6px)',
           },
@@ -91,7 +92,7 @@ export const ModalLearnMore = ({ open, onClose, car }) => {
             <ItemInfo key={index}>{accessory}</ItemInfo>
           ))}
         </ListInfoAccessories>
-        <Rental>Rental Conditions: </Rental>{' '}
+        <Rental>Rental Conditions: </Rental>
         <ul>
           {conditionsArray.map((condition, index) => (
             <RentalItem
@@ -108,6 +109,32 @@ export const ModalLearnMore = ({ open, onClose, car }) => {
             <RentalSpan>{car.rentalPrice}</RentalSpan>
           </RentalItem>
         </ul>
+        <a href={`tel:+380961111111`}>
+          <Button
+            variant="contained"
+            //   onClick={() => onClickLearnMore(car)}
+            sx={{
+              width: '168px',
+              height: '44px',
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderRadius: '12px',
+              background: '#3470FF',
+              color: 'white',
+              fontFamily: 'Manrope',
+              fontSize: '14px',
+              fontStyle: 'normal',
+              fontWeight: '600',
+              lineHeight: '20px',
+              textTransform: 'none',
+              display: 'block',
+              margin: ' 0 auto',
+              marginTop: '24px',
+            }}
+          >
+            Rental car
+          </Button>
+        </a>
       </ModalWrap>
     </Modal>
   );

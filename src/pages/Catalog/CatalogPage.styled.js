@@ -19,11 +19,9 @@ export const Container = styled.ul`
 `;
 
 export const ItemCar = styled.li`
-  border: 1px solid #ccc;
-
   flex-basis: calc((100% - 87px) / 4);
   position: relative;
-  gap: 29px;
+  gap: 24px;
   height: 450px;
   width: 274px;
   position: relative;
